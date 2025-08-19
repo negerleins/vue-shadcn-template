@@ -1,13 +1,14 @@
 import path from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [vue(), tailwindcss()],
+  plugins: [vue(), tailwindcss(), vueJsx()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './(source)'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 })
